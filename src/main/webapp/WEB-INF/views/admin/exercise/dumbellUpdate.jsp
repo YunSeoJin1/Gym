@@ -10,7 +10,7 @@
                           Exercise Name
                           <input type="text" name="key" id="key">
                           <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">
-                          <input class="btn" type="button" name="btn_total" value="전체 목록 " onClick="location.href='admin_exercise_list'">
+                          <input class="btn" type="button" name="btn_total" value="전체 목록 " onClick="location.href='admin_dumbell_list'">
                           
                       </td>
                     </tr>
@@ -22,20 +22,20 @@
                             <table>
                                 <tr>
                                     <th>운동이름</th>
-                                    <td><input type="text" name="dex_name" id="dex_name" size="50" maxlength="100" value="Exercise Name"></td>
+                                    <td><input type="text" name="dex_name" id="dex_name" size="50" maxlength="100" value="${dumbellVO.dex_name}"></td>
                                 </tr>
                                 <tr>
                                     <th>운동 부위</th>
-                                    <td><input type="text" name="dex_part" id="dex_part" size="50" maxlength="100" value="Exercise part"></td>
+                                    <td><input type="text" name="dex_part" id="dex_part" size="50" maxlength="100" value="${dumbellVO.dex_part}"></td>
                                 </tr>
                                 <tr>
                                     <th>운동 설명</th>
-                                    <td><textarea name="dex_desciription" id="dex_description" rows="8" cols="70">description</textarea></td>
+                                    <td><textarea name="dex_desciription" id="dex_description" rows="8" cols="70">${dumbellVO.dex_description}</textarea></td>
                                 </tr>
                                 <tr>
                                     <th>운동 이미지</th>
                                     <td>
-                                        <input type="file" name="exercise_image" id="exercise_image"  accept="image/*" onchange="setThumbnail(event);">
+                                        <input type="file" name="dumbell_image" id="dumbell_image"  accept="image/*" onchange="setThumbnail(event);">
                                         <div id="image_container"></div>
                                     </td>
                                 </tr>
@@ -44,8 +44,8 @@
                                         
                                    
                             </table>
-                                        <input class="board-btn" type="button" value="수정" onclick="location.href='admin_exercise_update'">           
-                                        <input class="board-btn" type="button" value="취소" onClick="location.href='admin_exercise_list'">
+                                        <input class="board-btn" type="button" value="수정" onclick="dumbell_update('${dumbellVO.deseq}')">           
+                                        <input class="board-btn" type="button" value="취소" onClick="location.href='admin_dumbell_list'">
                         </div>
                     </form>
                 </div>

@@ -41,7 +41,7 @@
 		dex_part = #{dex_part, jdbcType=VARCHAR},
 		dex_description = #{dex_description, jdbcType=VARCHAR},
 		dex_img = #{dex_img, jdbcType=VARCHAR}
-		WHERE deseq=#{de_seq}
+		WHERE deseq=#{deseq}
 	</update>
 	
 	<!-- 운동 삭제 -->

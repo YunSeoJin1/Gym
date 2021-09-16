@@ -18,10 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.green.biz.admin.AdminService;
 import com.green.biz.dto.AdminVO;
 import com.green.biz.dto.DumbellVO;
-import com.green.biz.dto.MemberVO;
 import com.green.biz.exercise.DumbellService;
-import com.green.biz.util.Criteria;
-import com.green.biz.util.PageMaker;
 
 
 
@@ -66,46 +63,45 @@ public class AdminController {
 	}
 	
 	// 운동 상세보기
-	@GetMapping(value="/admin_ex_view")
+	@GetMapping(value="/admin_dumbell_view")
 	public String exView(DumbellVO vo, HttpSession session, Model model) {
-		DumbellVO ex = ds.getEx(vo.getDeseq());
-		model.addAttribute("dumbellVO", ex);
-		return "admin/exercise/exView";
+		DumbellVO dumbell = ds.getDumbell(vo.getDeseq());
+		model.addAttribute("dumbellVO", dumbell);
+		return "admin/exercise/dumbellView";
 	}
 	
 	// 분류별 운동 목록조회
-	@GetMapping(value="/admin_ex_part")
-	public String adminExPart(DumbellVO vo, Model model) {
+	@GetMapping(value="/admin_dumbell_part")
+	public String dumbellKindList(DumbellVO vo, Model model) {
 
-		List<DumbellVO> exList = ds.getDumbellListByKind(vo.getDex_part());
+		List<DumbellVO> listDumbell = ds.getDumbellListByKind(vo.getDex_part());
 
-		model.addAttribute("exList", exList);
+		model.addAttribute("dumbellKindList", listDumbell);
 
-		return "admin/exercise/exercisePartList";
+		return "admin/exercise/dumbellKind";
 	}
 	
-	// 관리자 운동 목록 조회
-	@RequestMapping(value = "admin_exercise_list")
-	public String dumbell_List(HttpSession session, Model model) {
+	// 운동 목록 조회
+	@RequestMapping(value = "admin_dumbell_list")
+	public String dumbellList(HttpSession session, Model model, DumbellVO vo) {
 			
-		DumbellVO d = new DumbellVO();
-			List<DumbellVO> dumbList = ds.getDumbellList(d.getDex_name());
+			List<DumbellVO> dumbellList = ds.listDumbell(vo.getDex_name());
 			
-			model.addAttribute("dumbellList", dumbList);
+			model.addAttribute("dumbellList", dumbellList);
 			
-			return "admin/exercise/exerciseList";
+			return "admin/exercise/dumbellList";
 	}
 	
 	// 운동 등록 화면 이동
-	@RequestMapping(value = "admin_exercise_write_form")
+	@RequestMapping(value = "admin_dumbell_write_form")
 	public String adminExWriteView(HttpSession session) {
-		return "admin/exercise/exerciseWrite";
+		return "admin/exercise/dumbellWrite";
 	}
 	
 	// 운동 등록 기능
-	@RequestMapping(value="admin_exercise_write")
+	@RequestMapping(value="admin_dumbell_write")
 	public String adminExWrite(
-			@RequestParam(value="exercise_image") MultipartFile uploadFile,
+			@RequestParam(value="dumbell_image",required = false) MultipartFile uploadFile,
 			DumbellVO vo, HttpSession session) {
 	
 		String fileName= "";
@@ -125,23 +121,23 @@ public class AdminController {
 		}
 	}
 		ds.insertDumbell(vo);
-		return "admin/exercise/exerciseList";
+		return "redirect:admin_dumbell_list";
 }
 	
 	// 운동 수정 화면
-	@RequestMapping(value="admin_exercise_update_form")
+	@RequestMapping(value="admin_dumbell_update_form")
 	public String adminPlaceUpdateView(DumbellVO vo, Model model) {
-		DumbellVO ex = ds.getEx(vo.getDeseq());
+		DumbellVO dumbell = ds.getDumbell(vo.getDeseq());
 
-		model.addAttribute("dumbellVO", ex);	
+		model.addAttribute("dumbellVO", dumbell);	
 
-		return "admin/exercise/exerciseUpdate";
+		return "admin/exercise/dumbellUpdate";
 	}
 	
 	// 운동 수정 기능
-	@RequestMapping(value="admin_exercise_update")
-	public String adminExUpdate(
-			@RequestParam(value="exercise_image") MultipartFile uploadFile,
+	@RequestMapping(value="admin_dumbell_update")
+	public String adminDumbellUpdate(
+			@RequestParam(value="dumbell_image",required = false) MultipartFile uploadFile,
 			DumbellVO vo, HttpSession session) {
 	
 		String fileName= "";
@@ -161,16 +157,16 @@ public class AdminController {
 		}
 	}
 		ds.updateDumbell(vo);
-		return "redirect:admin_ex_view?deseq="+vo.getDeseq();
+		return "redirect:admin_dumbell_view?deseq="+vo.getDeseq();
 }
 	
 	// 운동 삭제
-	@RequestMapping(value = "admin_exercise_delete")
-	public String adminExDelete(DumbellVO vo, Model model) {
+	@RequestMapping(value = "admin_dumbell_delete")
+	public String adminDumbellDelete(DumbellVO vo, Model model) {
 	
 		ds.deleteDumbell(vo.getDeseq());
 		
-		return "redirect:admin_exercise_list";
+		return "redirect:admin_dumbell_list";
 	}
 }
 	

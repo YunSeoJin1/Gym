@@ -42,7 +42,7 @@
             
           </li>
           <li>
-            <a href="dumbell"><i class="ion-ios-briefcase-outline"></i> <span class="">Exercise</span></a>
+            <a href="dumbell_list"><i class="ion-ios-briefcase-outline"></i> <span class="">Exercise</span></a>
            </li>
           <li>
             <a href="#"><i class="ion-ios-navigate-outline"></i> <span class="">Best Traning course</span></a>
