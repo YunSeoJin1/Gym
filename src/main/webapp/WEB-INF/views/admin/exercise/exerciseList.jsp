@@ -72,7 +72,7 @@
                     
                 </tr>
                 <tr>
-                    <td>01</td>
+                    <td>02</td>
                     <td><img src="./images/PT 자세.jpg"></td>
                     <td>스쿼트</td>
                     <td>하체</td>
