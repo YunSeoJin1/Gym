@@ -18,7 +18,7 @@
                 <div class="board-write">
                     <form id="boardWrite" method="POST" enctype="multipart/form-data">
                         <div class="boardWrite">
-                            <h1>Exercise Insert</h1>
+                            <h1>Exercise Update</h1>
                             <table>
                                 <tr>
                                     <th>운동이름</th>
@@ -44,7 +44,7 @@
                                         
                                    
                             </table>
-                                        <input class="board-btn" type="button" value="등록" onclick="location.href='admin_exercise_write'">           
+                                        <input class="board-btn" type="button" value="수정" onclick="location.href='admin_exercise_update'">           
                                         <input class="board-btn" type="button" value="취소" onClick="location.href='admin_exercise_list'">
                         </div>
                     </form>

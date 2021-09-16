@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,11 +16,11 @@
             <nav class="navbar">
                 <div class="navbar_logo">
                     <i class="fas fa-running"></i>
-                    <a href=""><strong>AdminPage</strong></a>
+                    <a href="admin_index"><strong>AdminPage</strong></a>
                 </div>
                 <ul class="navbar_menu">
-                    <li><a href="adminIndex">Home</a></li>
-                    <li><a href="">Exercise</a></li>
+                    <li><a href="admin_index">Home</a></li>
+                    <li><a href="admin_exercise_list">Exercise</a></li>
                     <li><a href="">Traning cos</a></li>
                     <li><a href="">User</a></li>
                     <li><a href="">Reply</a></li>

@@ -23,9 +23,6 @@ public class ExerciseController {
 	@Autowired
 	private DumbellService ds;
 	
-	
-	
-	
 	@RequestMapping(value = "dumbell", method = RequestMethod.GET)
 	public String dumbell_List(@RequestParam(value="key", defaultValue="") String key,
 			MemberVO mVo, HttpSession session, Model model, Criteria criteria) {

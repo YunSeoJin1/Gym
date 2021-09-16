@@ -1,6 +1,5 @@
 package com.green.biz.dao;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -8,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.green.biz.dto.DumbellVO;
-import com.green.biz.util.Criteria;
 
 @Repository
 public class DumbellDAO{
@@ -16,25 +14,34 @@ public class DumbellDAO{
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
+	// 상세보기
+	public DumbellVO getDumbell(int deseq) {
+		return mybatis.selectOne("DumbellDAO.getDumbell", deseq);
+	}
+	
 	//덤벨 리스트
-	public List<DumbellVO> getDumbellList(String dex_name){
+	public List<DumbellVO> listDumbell(String dex_name){
 		
-		return mybatis.selectList("DumbellDAO.dumbellList",dex_name);
+		return mybatis.selectList("DumbellDAO.listDumbell",dex_name);
+	}
+	// 운동 분류
+	public List<DumbellVO> getDumbellListByKind(String dex_part) {
+		return mybatis.selectList("DumbellDAO.getDumbellListByKind", dex_part);
+	}
+
+	// 운동추가
+	public void insertDumbell(DumbellVO vo) {
+		mybatis.insert("DumbellDAO.insertDumbell", vo);
 	}
 	
-	
-	//페이징 처리
-	public List<DumbellVO> getListWithPaging(Criteria criteria, String key) {
-		HashMap<String, Object> map = new HashMap<>();
-		map.put("criteria", criteria);
-		map.put("key", key);
-		
-		return mybatis.selectList("DumbellDAO.listWithPaging", map);
+	// 운동수정
+	public void updateDumbell(DumbellVO vo) {
+		mybatis.update("DumbellDAO.updateDumbell", vo);
 	}
-	//리스트 갯수
-	public int countExerciseList(String dex_name) {
-		
-		return mybatis.selectOne("DumbellDAO.countExerciseList", dex_name);
+	
+	// 운동삭제
+	public void deleteDumbell(int deseq) {
+		mybatis.delete("DumbellDAO.deleteDumbell", deseq);
 	}
 	
 	

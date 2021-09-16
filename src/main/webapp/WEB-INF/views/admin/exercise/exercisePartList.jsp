@@ -26,7 +26,7 @@
 
             </table>
             <table class="board-List">
-            	<c:forEach items="dumbellVO" var="dumbellVO">
+            	<c:forEach items="${exList}" var="dumbellVO">
                 <tr>
                     <th>번호</th>
                     <th>사진</th>
@@ -36,19 +36,21 @@
                 </tr>
                 <tr>
                     <td>${dumbellVO.deseq}</td>
-                    <td>
-                    	<a href="admin_ex_view?deseq=${dumbellVO.deseq}">
-                    		<img src="images/${dumbellVO.dex_img}"></a>
-                    </td>
+                    <td><a href="admin_ex_view"><img src="exerciseimg/${dumbellVO.dex_img}"></a></td>
                     <td>${dumbellVO.dex_name}</td>
                     <td>${dumbellVO.dex_part}</td>
-                    <td>${dumbellVO.dex_description}</td>
+                    <td><input type="checkbox" value="${dumbellVO.dex_ckbox}"></td>
                 </tr>
                 </c:forEach>
+  
+                
+                
+                <tr><td colspan="6" style="text-align: center;"> ${paging} </td></tr>
+    
             </table>
             
             </div>
         </div>
     </section>
-<%@ include file="../../page_area.jsp"%>
+
 <%@include file="../adminFooter.jsp"%>

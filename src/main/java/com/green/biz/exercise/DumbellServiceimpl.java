@@ -36,6 +36,36 @@ public class DumbellServiceimpl implements DumbellService {
 	}
 
 
+	@Override
+	public void insertDumbell(DumbellVO vo) {
+		dDao.insertDumbell(vo);
+	}
+
+
+	@Override
+	public void updateDumbell(DumbellVO vo) {
+		dDao.updateDumbell(vo);
+	}
+
+
+	@Override
+	public void deleteDumbell(int deseq) {
+		dDao.deleteDumbell(deseq);
+	}
+
+
+	@Override
+	public List<DumbellVO> getDumbellListByKind(String dex_part) {
+		return dDao.getDumbellListByKind(dex_part);
+	}
+
+
+	@Override
+	public DumbellVO getEx(int deseq) {
+		return dDao.getEx(deseq);
+	}
+
+
 
 	
 }
