@@ -23,7 +23,7 @@ public class MypageController {
 	
 	@Autowired
 	private MemberService memberService;
-	private MypageService ms;
+	private MypageService mypageService;
 	
 	//회원 정보 수정 페이지 이동
 	@RequestMapping(value="info_form")
@@ -111,8 +111,8 @@ public class MypageController {
 			return "mypage/notlogin";
 		}else {
 			
-			
-			ms.insertWeight(pVo);
+			System.out.println(pVo);
+			mypageService.insertWeight(pVo);
 			System.out.println("체중 입력 완료!");
 			return "mypage/record";
 		}

@@ -9,18 +9,18 @@ import com.green.biz.dto.MypageVO;
 public class MypageServiceImpl implements MypageService {
 	
 	@Autowired
-	private MypageDAO myDao;
+	private MypageDAO mDao;
 	
 	@Override
-	public void insertWeight(MypageVO mVo) {
+	public void insertWeight(MypageVO mpVo) {
 		
-		myDao.insertWeight(mVo);
+		mDao.insertWeight(mpVo);
 	}
 
 	@Override
 	public MypageVO getWeightList(String id) {
 		
-		return myDao.getWeightList(id);
+		return mDao.getWeightList(id);
 	}
 
 }

@@ -1,13 +1,14 @@
 package com.green.biz.dto;
 
-import java.sql.Timestamp;
+import java.sql.Date;
+
 
 public class MypageVO {
 	
 	private int useq;
 	private String id;
 	private float weight;
-	private Timestamp indate;
+	private Date indate;
 	
 	public int getUseq() {
 		return useq;
@@ -27,10 +28,10 @@ public class MypageVO {
 	public void setWeight(float weight) {
 		this.weight = weight;
 	}
-	public Timestamp getIndate() {
+	public Date getIndate() {
 		return indate;
 	}
-	public void setIndate(Timestamp indate) {
+	public void setIndate(Date indate) {
 		this.indate = indate;
 	}
 	@Override

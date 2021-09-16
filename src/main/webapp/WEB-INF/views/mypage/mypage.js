@@ -17,13 +17,6 @@ function info_save(){
 	
 }
 
-function weight_rec(){
-	let today = new date();
-	if($("#indate").val()=="") {
-		$("#indate").val()== today;
-		alert("오늘 날짜가 입력 되었습니다!");
-	}
-}
 
 
    

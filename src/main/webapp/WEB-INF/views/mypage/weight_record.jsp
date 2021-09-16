@@ -86,15 +86,15 @@
              <div id="bmi_view">
              	<div class="bmi-area">
              		<label>유저</label>
-                    <input type="text" id="id" value="${sessionScope.loginUser.id}"><br>
+                    <input type="text" id="id" name="id" value="${sessionScope.loginUser.id}"><br>
              	</div>
                 <div class="bmi-area">
                     <label>체중</label>
-                    <input type="number" step="0.1" id="weight"> Kg<br>
+                    <input type="number" step="0.1" id="weight" name="weight"> Kg<br>
                 </div>
                 <div class="bmi-area">
                     <label>날짜</label>
-                    <input type="date" id="indate"><br>
+                    <input type="date" id="indate" name="indate"><br>
                    
                 </div>
                 <div class="bmi-btn-area">
@@ -103,5 +103,5 @@
             </div>
             </form>
         </div>
-<script type="text/javascript" src="mypage/mypage.js"></script>		
+
 <%@include file="../footer.jsp"%>

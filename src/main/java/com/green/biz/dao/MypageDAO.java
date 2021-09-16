@@ -13,8 +13,10 @@ public class MypageDAO {
 	private SqlSessionTemplate mybatis;
 	
 	//체중 측정
-	public void insertWeight(MypageVO mVo) {
-		mybatis.insert("MypageDAO.insertWeight",mVo);
+	public void insertWeight(MypageVO mpVo) {
+		System.out.println("DAO : " + mpVo);
+		
+		mybatis.insert("MypageDAO.insertWeight", mpVo);
 	}
 	//체중 측정 기록 보기
 	public MypageVO getWeightList(String id) {
