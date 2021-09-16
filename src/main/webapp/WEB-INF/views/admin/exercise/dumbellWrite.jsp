@@ -30,12 +30,12 @@
                                 </tr>
                                 <tr>
                                     <th>운동 설명</th>
-                                    <td><textarea name="dex_desciription" id="dex_description" rows="8" cols="70">description</textarea></td>
+                                    <td><textarea name="dex_description" id="dex_description" rows="8" cols="70"></textarea></td>
                                 </tr>
                                 <tr>
                                     <th>운동 이미지</th>
                                     <td>
-                                        <input type="file" name="dumbell_image" id="dumbell_image"  accept="image/*" onchange="setThumbnail(event);">
+                                        <input type="file" name="dex_img" id="dex_img"  accept="image/*" onchange="setThumbnail(event);">
                                         <div id="image_container"></div>
                                     </td>
                                 </tr>
