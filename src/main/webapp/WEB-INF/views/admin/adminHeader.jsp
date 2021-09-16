@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="css/adminindex.css">
  <script src="https://kit.fontawesome.com/9a7aea99ac.js" crossorigin="anonymous"></script>
 <script type="text/javascript" src="admin/admin.js"></script>
@@ -19,8 +20,8 @@
                     <a href="admin_index"><strong>AdminPage</strong></a>
                 </div>
                 <ul class="navbar_menu">
-                    <li><a href="admin_index">Home</a></li>
-                    <li><a href="admin_exercise_list">Exercise</a></li>
+                    <li><a href="index">Home</a></li>
+                    <li><a href="admin_dumbell_list">Exercise</a></li>
                     <li><a href="">Traning cos</a></li>
                     <li><a href="">User</a></li>
                     <li><a href="">Reply</a></li>

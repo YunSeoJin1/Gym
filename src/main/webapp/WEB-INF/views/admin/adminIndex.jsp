@@ -7,7 +7,7 @@
                     <div class="desc">
                         <h2>Exercise List</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ea reprehenderit dolores quos dignissimos vel qui illo. Dicta natus ea illum quas, sequi nesciunt dolorem eos corrupti, minus laborum obcaecati debitis. Necessitatibus dicta a, reprehenderit voluptatum deleniti est amet magnam error saepe quo facilis quisquam! Ipsam officia dolor mollitia explicabo facere sequi iste unde ullam, expedita temporibus hic accusantium, molestiae neque perferendis a maxime dolore aliquam nam voluptatem doloremque rerum? Ipsum pariatur exercitationem obcaecati aperiam quibusdam voluptatibus aut, porro assumenda quas eligendi natus placeat accusantium illo delectus animi id repellat maxime, quisquam corrupti unde molestias. Alias, nam! Sed, eaque ad!</p>
-                        <a href="ExerciseList">Exercise List</a>
+                        <a href="admin_dumbell_list">Exercise List</a>
                     </div>
                     <div class="photo">
                         <img src="./images/04.몸통 스트레칭(팔펴고).gif">

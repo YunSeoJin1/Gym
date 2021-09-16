@@ -10,13 +10,13 @@
                           Exercise Name
                           <input type="text" name="key" id="key">
                           <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">
-                          <input class="btn" type="button" name="btn_total" value="전체 목록 " onClick="location.href='admin_exercise_list'">
+                          <input class="btn" type="button" name="btn_total" value="전체 목록 " onClick="location.href='admin_dumbell_list'">
                           
                       </td>
                     </tr>
                   </table>
                 <div class="board-write">
-                    <form id="boardWrite" method="POST" enctype="multipart/form-data">
+                    <form id="boardWrite" class="writeForm" method="POST" enctype="multipart/form-data">
                         <div class="boardWrite">
                             <h1>Exercise Insert</h1>
                             <table>
@@ -35,7 +35,7 @@
                                 <tr>
                                     <th>운동 이미지</th>
                                     <td>
-                                        <input type="file" name="exercise_image" id="exercise_image"  accept="image/*" onchange="setThumbnail(event);">
+                                        <input type="file" name="dumbell_image" id="dumbell_image"  accept="image/*" onchange="setThumbnail(event);">
                                         <div id="image_container"></div>
                                     </td>
                                 </tr>
@@ -44,8 +44,8 @@
                                         
                                    
                             </table>
-                                        <input class="board-btn" type="button" value="등록" onclick="location.href='admin_exercise_write'">           
-                                        <input class="board-btn" type="button" value="취소" onClick="location.href='admin_exercise_list'">
+                                        <input class="board-btn" type="button" value="등록" onclick="dumbell_save()">           
+                                        <input class="board-btn" type="button" value="취소" onClick="location.href='admin_dumbell_list'">
                         </div>
                     </form>
                 </div>
@@ -64,6 +64,7 @@
                document.querySelector("div#image_container").appendChild(img);
            };
        
-       reader.readAsDataURL(event.target.files[0]); }
+       reader.readAsDataURL(event.target.files[0]); };
+        
    </script>
 <%@include file="../adminFooter.jsp"%>

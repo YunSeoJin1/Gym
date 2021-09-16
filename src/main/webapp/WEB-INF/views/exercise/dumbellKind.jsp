@@ -4,6 +4,8 @@
 <%@include file="../loginside.jsp" %>
 <link rel="stylesheet" href="css/dumbell.css" >
 <div class="board_list_wrap">
+	<!-- 임시 링크로 테스트 -->
+
 	<form name="frm" id="dumbell_form" method ="post">
             <table class="board_list">
                 <div class="title">
@@ -13,6 +15,24 @@
                     <input type="text" placeholder="검색어 입력">
                     <button>검색</button>
                 </div>
+     <div class="test">
+	   	<ul>
+	   		<li><a href="dumbell_list">전체보기</a></li>
+			<br>
+			<li><a href="dumbell_part?dex_part=1">가슴</a></li>
+			<br>
+			<li><a href="dumbell_part?dex_part=2">등</a></li>
+			<br>
+			<li><a href="dumbell_part?dex_part=3">이두</a></li>
+			<br>
+			<li><a href="dumbell_part?dex_part=4">삼두</a></li>
+			<br>
+			<li><a href="dumbell_part?dex_part=5">복근</a></li>
+			<br>
+			<li><a href="dumbell_part?dex_part=6">하체</a></li>
+			<br>
+		</ul>
+	</div>
                 <div class="savebtn_area">
                     <input class="savebtn" type="button" value="저장하기">
                 </div>
@@ -46,17 +66,17 @@
 							    </tr>
 						</c:when>
 						<c:otherwise>
-		                    <c:forEach items="${dumbellList}" var="DumbellVO">
+		                    <c:forEach items="${dumbellKindList}" var="dumbellVO">
 		                        <tr>
-		                            <td>${DumbellVO.deseq}</td>
-		                            <td><img src="exerciseimg/${DumbellVO.dex_img}"></td>
-		                            <td>${DumbellVO.dex_name}</td>
-		                            <td>${DumbellVO.dex_part}</td>
-		                            <td>${DumbellVO.dex_description}</td>
-		                            <td><input type="checkbox" value="${DumbellVO.dex_ckbox}"></td>
+		                            <td>${dumbellVO.deseq}</td>
+		                            <td><a href="dumbell_view?deseq=${dumbellVO.deseq}">
+		                            	<img src="images/${dumbellVO.dex_img}"></a></td>
+		                            <td>${dumbellVO.dex_name}</td>
+		                            <td>${dumbellVO.dex_part}</td>
+		                            <td>${dumbellVO.dex_description}</td>
+		                            <td><input type="checkbox" value="${dumbellVO.dex_ckbox}"></td>
 		                        </tr>
 		                   	</c:forEach>
-		                   		<tr><td colspan="6" style="text-align: center;"> ${paging} </td></tr>
 	                   	</c:otherwise>
 	                   	</c:choose>
 	                   	

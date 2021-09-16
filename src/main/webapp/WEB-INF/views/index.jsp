@@ -47,7 +47,7 @@
 		                       <p>
 		                           Exercise Infomation
 		                       </p>
-		                      <a href="dumbell">이동하기</a>
+		                      <a href="dumbell_list">이동하기</a>
 		                   </div>
 		               </div>
 		           </div>

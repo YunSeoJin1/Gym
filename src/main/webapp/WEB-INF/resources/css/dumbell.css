@@ -55,3 +55,14 @@
         .savebtn{
             margin: 10px;
         }
+.test {
+	width: 80%;
+	text-align: center;
+}
+.test ul li {
+	list-style: none;
+}
+.test ul li a {
+	color: white;
+	
+}
