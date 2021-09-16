@@ -3,87 +3,49 @@
 <%@include file="../sidebar.jsp" %>
 <%@include file="../loginside.jsp" %>
 <link rel="stylesheet" href="css/dumbell.css" >
-<div class="board_list_wrap">
-	<!-- 임시 링크로 테스트 -->
+<section class="Exercise">
+        <div class="inner">
+            <div class="Exercise-content">
+            <h1>Exercise List</h1>	
+            <table class="board-title">
+              <tr>
+                <td width="642">
+                    Exercise Name
+                    <input type="text" name="key" id="key">
+                    <input class="btn" type="button" name="btn_search" value="검색" onClick="location.href='index'">
+                    <input class="btn" type="button" name="btn_total" value="전체보기 " onclick="location.href='dumbell_list'">
+                	<br><br><input class="btn" type="button" value="가슴" onclick="location.href='dumbell_part?dex_part=1'">
+                	<input class="btn" type="button" value="등" onclick="location.href='dumbell_part?dex_part=2'">
+                	<input class="btn" type="button" value="이두" onclick="location.href='dumbell_part?dex_part=3'">
+                	<input class="btn" type="button" value="삼두" onclick="location.href='dumbell_part?dex_part=4'">
+                	<input class="btn" type="button" value="복근" onclick="location.href='dumbell_part?dex_part=5'">
+                	<input class="btn" type="button" value="하체" onclick="location.href='dumbell_part?dex_part=6'">
+                </td>
+              </tr>
+              		<!-- 임시 링크로 테스트 -->
 
-	<form name="frm" id="dumbell_form" method ="post">
-            <table class="board_list">
-                <div class="title">
-                    <h2>Dumbell Exercise</h2>
-                </div>
-                <div class="searchbar">
-                    <input type="text" placeholder="검색어 입력">
-                    <button>검색</button>
-                </div>
-     <div class="test">
-	   	<ul>
-	   		<li><a href="dumbell_list">전체보기</a></li>
-			<br>
-			<li><a href="dumbell_part?dex_part=1">가슴</a></li>
-			<br>
-			<li><a href="dumbell_part?dex_part=2">등</a></li>
-			<br>
-			<li><a href="dumbell_part?dex_part=3">이두</a></li>
-			<br>
-			<li><a href="dumbell_part?dex_part=4">삼두</a></li>
-			<br>
-			<li><a href="dumbell_part?dex_part=5">복근</a></li>
-			<br>
-			<li><a href="dumbell_part?dex_part=6">하체</a></li>
-			<br>
-		</ul>
-	</div>
-                <div class="savebtn_area">
-                    <input class="savebtn" type="button" value="저장하기">
-                </div>
-                    <thead>
-                        <tr>
-                            <th style="width: 10%;">번호</th>
-                            <th style="width: 150px;">사진</th>
-                            <th style="width: 15%;">제목</th>
-                            <th style="width: 15%;">
-                            <select style="width: 100%; text-align: center;">
-                                <option>-----부위-----</option>
-                                <option value="1">-----가슴-----</option>
-                                <option value="2">-----&nbsp;&nbsp;등&nbsp;&nbsp;-----</option>
-                                <option value="3">-----이두-----</option>
-                                <option value="4">-----삼두-----</option>
-                                <option value="5">-----복근-----</option>
-                                <option value="6">-----하체-----</option>
-                            </select>
-                            </th>
-                            <th style="width: 30%;">설명</th>
-                            <th style="width: 20%;">리스트 저장</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    	<c:choose>
-	                    <c:when test="${dumbListSize<=0}">
-							    <tr>
-							      <td width="100%" colspan="7" align="center" height="23">
-							        등록된 운동이 없습니다.
-							      </td>      
-							    </tr>
-						</c:when>
-						<c:otherwise>
-		                    <c:forEach items="${dumbellKindList}" var="dumbellVO">
-		                        <tr>
-		                            <td>${dumbellVO.deseq}</td>
-		                            <td><a href="dumbell_view?deseq=${dumbellVO.deseq}">
-		                            	<img src="images/${dumbellVO.dex_img}"></a></td>
-		                            <td>${dumbellVO.dex_name}</td>
-		                            <td>${dumbellVO.dex_part}</td>
-		                            <td>${dumbellVO.dex_description}</td>
-		                            <td><input type="checkbox" value="${dumbellVO.dex_ckbox}"></td>
-		                        </tr>
-		                   	</c:forEach>
-	                   	</c:otherwise>
-	                   	</c:choose>
-	                   	
-                   </tbody>
-        	</table>
-    	</form> 
-    	<%--@include file="../page_area.jsp"-- --%>	
-    </div>  
+            </table>
+            <c:forEach items="${dumbellKindList}" var="dumbellVO">
+            <table class="board-List">
+                <tr>
+                    <th>번호</th>
+                    <th>사진</th>
+                    <th>운동 이름</th>
+                    <th>부위</th>
+                    <th>설명</th>
+                </tr>
+                <tr>
+                    <td>${dumbellVO.deseq}</td>
+                    <td><a href="dumbell_view?deseq=${dumbellVO.deseq}">
+                    	<img src="images/${dumbellVO.dex_img}"></a></td>
+                    <td>${dumbellVO.dex_name}</td>
+                    <td>${dumbellVO.dex_part}</td>
+                    <td><input type="checkbox" value="${dumbellVO.dex_ckbox}"></td>
+                </tr>
+            </table>
+            </c:forEach>
+            </div>
+        </div>
+    </section>
 
 <%@include file="../footer.jsp" %>

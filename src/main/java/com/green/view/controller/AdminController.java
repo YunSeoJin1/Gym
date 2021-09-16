@@ -111,7 +111,7 @@ public class AdminController {
 			
 		String image_path
 		= session.getServletContext().getRealPath("WEB-INF/resources/images");
-		
+		System.out.println("이미지 경로 : " + image_path);
 		
 		try {
 			File file = new File(image_path+fileName);
@@ -147,7 +147,7 @@ public class AdminController {
 			
 		String image_path
 		= session.getServletContext().getRealPath("WEB-INF/resources/images");
-		
+		System.out.println("이미지 경로 : " + image_path);
 		
 		try {
 			File file = new File(image_path+fileName);

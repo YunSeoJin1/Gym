@@ -66,3 +66,94 @@
 	color: white;
 	
 }
+
+.Exercise h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.Exercise-content{
+    
+    border-bottom: 1px solid #ccc;
+}
+.board-title{
+   
+    border: 1px solid black;
+    margin: 30px auto;
+}
+.board-List{
+    margin: auto;
+    border: 1px solid #c25a3a;
+}
+.board-List th{
+   width: 19%;
+    padding: 0;
+    background-color: #ccc;
+}
+
+.board-List td{
+    text-align: center;
+}
+.board-List td img{
+    width: 150px;
+    height: 150px;
+}
+/* board Write*/
+
+.boardWrite{
+    width: 60%;
+    border: 1px solid #ddd;
+    margin: 10px auto;
+}
+.boardWrite input[type=text]{
+    width: 60%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px; color: black;
+    outline: none;
+}
+.boardWrite textArea{
+    width: 60%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border: 1px solid #999;
+    font-size: 18px; color: black;
+    outline: none;
+}
+.boardWrite input[type=file]{
+    width: 60%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px; color: black;
+    outline: none;
+}
+
+.boardWrite tr,th,td{
+    padding: 10px;
+    
+}
+.board-btn {
+    margin: 30px;
+    margin-left:15% ;
+    width: 25%;
+    
+}
+#image_container img{
+	width: 150px;
+	height: 150px;
+	
+}
+.inner {
+    width :1300px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: #333;
+}
+.inner:hover{
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
