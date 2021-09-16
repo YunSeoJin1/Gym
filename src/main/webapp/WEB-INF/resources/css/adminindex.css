@@ -297,3 +297,34 @@ footer{
         
     }
 }
+
+.Exercise h1{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.Exercise-content{
+    
+    border: 1px solid #ccc;
+}
+.board-title{
+   
+    border: 1px solid black;
+    margin: 30px auto;
+}
+.board-List{
+    margin: auto;
+    border: 1px solid #c25a3a;
+}
+.board-List th{
+   width: 19%;
+    padding: 0;
+    background-color: #ccc;
+}
+.board-List td{
+    text-align: center;
+}
+.board-List td img{
+    width: 150px;
+    height: 150px;
+}
+
