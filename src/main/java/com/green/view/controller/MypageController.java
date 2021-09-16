@@ -23,6 +23,7 @@ public class MypageController {
 	
 	@Autowired
 	private MemberService memberService;
+	@Autowired
 	private MypageService mypageService;
 	
 	//회원 정보 수정 페이지 이동
@@ -112,8 +113,10 @@ public class MypageController {
 		}else {
 			
 			System.out.println(pVo);
-			mypageService.insertWeight(pVo);
+			
+			mypageService.insertWeight(pVo,mVo);
 			System.out.println("체중 입력 완료!");
+			System.out.println(mVo);
 			return "mypage/record";
 		}
 		

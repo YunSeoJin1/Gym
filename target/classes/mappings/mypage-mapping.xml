@@ -4,8 +4,15 @@
 
 <insert id="insertWeight" >
 	INSERT INTO userinfo (useq, id, weight, indate)
-		VALUES(user_seq.nextVAL, #{id} ,#{weight}, TO_CHAR{'#{indate}','YYYY-MM-DD'))
+		VALUES(user_seq.nextVAL, #{id} ,#{weight}, #{indate})
 </insert>
+<update id="updateWeight">
+	update member set
+	weight = #{weight}
+	where id = #{id}
+</update>
+
+
 <select id="weightList" parameterType="String">
 	SELECT * FROM userinfo
 	WHERE id = #{id}

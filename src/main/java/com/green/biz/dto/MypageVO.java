@@ -3,11 +3,14 @@ package com.green.biz.dto;
 import java.sql.Date;
 
 
+
+
 public class MypageVO {
 	
 	private int useq;
 	private String id;
 	private float weight;
+	
 	private Date indate;
 	
 	public int getUseq() {
