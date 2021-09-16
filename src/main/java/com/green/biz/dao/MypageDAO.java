@@ -1,11 +1,14 @@
 package com.green.biz.dao;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.green.biz.dto.MemberVO;
 import com.green.biz.dto.MypageVO;
+import com.green.biz.dto.WeightRecordView;
 
 @Repository
 public class MypageDAO {
@@ -22,8 +25,8 @@ public class MypageDAO {
 		mybatis.update("MypageDAO.updateWeight", mVo);
 	}
 	//체중 측정 기록 보기
-	public MypageVO getWeightList(String id) {
+	public List<WeightRecordView> getWeightRecord() {
 		
-		return mybatis.selectOne("MypageDAO.getWeightList",id);
+		return mybatis.selectList("MypageDAO.getWeightRecord");
 	}
 }

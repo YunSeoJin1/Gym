@@ -1,11 +1,14 @@
 package com.green.biz.mypage;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.green.biz.dao.MypageDAO;
 import com.green.biz.dto.MemberVO;
 import com.green.biz.dto.MypageVO;
+import com.green.biz.dto.WeightRecordView;
 @Service("mypageService")
 public class MypageServiceImpl implements MypageService {
 	
@@ -20,9 +23,10 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	@Override
-	public MypageVO getWeightList(String id) {
+	public List<WeightRecordView> getWeightRecord() {
 		
-		return mDao.getWeightList(id);
+		return mDao.getWeightRecord();
 	}
 
+	
 }
