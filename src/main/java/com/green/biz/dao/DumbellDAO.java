@@ -20,6 +20,7 @@ public class DumbellDAO{
 	}
 	
 	//덤벨 리스트
+	
 	public List<DumbellVO> listDumbell(String dex_name){
 		
 		return mybatis.selectList("DumbellDAO.listDumbell",dex_name);

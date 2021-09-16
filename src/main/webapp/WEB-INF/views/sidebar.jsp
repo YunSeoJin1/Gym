@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/index.css" >  
 <link rel="stylesheet" href="css/sidebar.css"> 
-
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
 <body>
@@ -31,7 +32,7 @@
                 <a href="weight_record"><i class="ion-ios-clock-outline"></i>체중 측정</a>
               </li>
               <li>
-                <a href="#"><i class="ion-ios-chatboxes-outline"></i>변화 그래프</a>
+                <a href="record_graph"><i class="ion-ios-chatboxes-outline"></i>변화 그래프</a>
               </li>
               
             </ul>
