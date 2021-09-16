@@ -1,0 +1,177 @@
+@charset "UTF-8";
+
+
+/*회원 가입 부분*/
+
+#join_view{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+#join_view{
+	height: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;/*가운데로*/
+    align-items: center; /* 이부분이 중앙 아래로*/
+    background-size: cover;
+}
+#join_view::before{/*배경 어둡게*/
+    content: "";
+    position: absolute; z-index: 1;
+    top: 0; right: 0; bottom: 0;left: 0;
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.join-form {
+    position: relative; z-index: 2;
+}
+
+.join-form h2{
+    font-size: 32px; color: #FFF;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.join-area{
+        width: 400px; position: relative;
+    
+    margin-top: 20px;
+    color:#999
+}
+.join-area p{
+	color:#999;
+}
+
+
+.join-area:first-child{margin-top: 0;}
+.join-area input[type=text]{
+    width: 60%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px; color: #FFF;
+    outline: none;
+}
+.join-area input[type=password]{
+    width: 60%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px; color: #FFF;
+    outline: none;
+}
+.join-area input[type=number]{
+    width: 60%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px; color: #FFF;
+    outline: none;
+}
+.join-area input[type=tel]{
+    width: 60%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px; color: #FFF;
+    outline: none;
+}
+.join-area input[type=email]{
+    width: 80%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #999;
+    font-size: 18px; color: #FFF;
+    outline: none;
+}
+.join-area label{
+    position: absolute; left: 10px; top: 15px;
+    font-size: 18px; color: #999;
+    transition: all .5s ease;
+}
+.join-area label.warning{
+    color: red !important;
+    animation: warning .3s ease;
+    animation-iteration-count: 3;
+}
+@keyframes warning {
+    0% {transform: translateX(-8px);}
+    25% {transform: translateX(8px);}
+    50% {transform: translateX(-8px);}
+    75% {transform: translateX(8px);}
+}
+.join-area input:focus + label,
+.join-area input:valid + label {
+    top:-2px;
+    font-size: 13px; color: #166cea;
+}
+.btn-area {margin-top: 30px;}
+.btn-area button{
+    width: 100%; height: 50px;
+    background: #166cea;
+    color: #FFF;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.btn-area2 {margin-top: 30px;}
+.btn-area2 button{
+    display: inline;
+    width: 15%; height: 50px;
+    background: #166cea;
+    color: #FFF;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.caption{
+    
+    margin-top: 20px;
+    text-align: center;
+  
+}
+.caption a{
+    font-size: 15px; color: #999;
+    text-decoration: none;
+}
+
+.dup {
+
+    display: inline-block;
+
+    width:25%;
+
+    background-color: #f8585b;
+
+    border: none;
+
+    color:#fff;
+
+    padding: 15px 0;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    display: inline-block;
+
+    font-size: 15px;
+
+    margin: 4px;
+
+    cursor: pointer;
+
+}
+
+#image_container img{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}

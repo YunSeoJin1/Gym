@@ -1,0 +1,57 @@
+@charset "UTF-8";
+		.board_list_wrap{
+        	margin: auto;
+ 		 	padding: auto;
+   			width: 900px;
+   			height:800px;
+            margin-top: 50px;
+            padding: 30px;
+            border: 1px solid black;
+        }
+ 		
+        .title{
+            width: 40%;
+            padding: 1px auto;
+            border: 2px solid black;
+            margin: 50px auto;
+            background-color: #09f;
+        }
+        h2{
+            color :white;
+            border-bottom: 2px solid blue;
+            text-align: center;
+            margin: 10px;
+			background-color: #09f;
+        }
+        
+        .board_list{
+            
+            border: 1px solid black;
+        }
+        .board table tr,th,td{ 
+            text-align: center;
+            border: 1px solid black;
+        }
+        th{
+            
+            background-color: skyblue;
+        }
+        td{
+        	color:white;
+        }
+        .board_list img{
+            width: 100px;
+            height: 100px;
+        }
+        .searchbar{
+            position: relative;
+            left: 75%;
+            margin: 20px;
+        }
+        .savebtn_area{
+           position: relative;
+           left: 90%;
+        } 
+        .savebtn{
+            margin: 10px;
+        }

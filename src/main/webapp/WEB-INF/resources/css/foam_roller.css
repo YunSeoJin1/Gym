@@ -1,0 +1,418 @@
+@charset "UTF-8";
+
+/****************************************/
+html, body {
+	margin: 0;
+	background-color: #101010;
+	font-family: sans-serif;
+  }
+  
+  .slideshow {
+	width: 100%;
+	height: 100%;
+	border: 0px;
+	padding: 0px;
+	margin: 0 auto;
+	background-color: #000;
+	overflow: hidden;
+  }
+  
+  input {
+	display: none;
+	overflow: hidden;
+  }
+  input:checked + .slide {
+	transform: translateX(0px);
+	transition: transform 0.5s ease-in-out;
+	
+  }
+  input:checked + .slide .slide__content {
+	width: 100%;
+	display: block;
+  }
+  
+  .slide {
+	transform: translateX(-100%);
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	background-size: 50% 100%;
+	transition: transform 0.5s ease-in-out;
+  }
+  .slide__content {
+	box-sizing: border-box;
+	height: calc(100% - 60px);
+	overflow: auto;
+	padding: 50px;
+	color: #DDD;
+	position: absolute;
+	left: 100%;
+	display: none;
+	animation-name: fade-in;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+	opacity: 1;
+  }
+  ul{
+	list-style: none;
+	}
+  .slide:nth-child(3) {
+	background: url('../images/01.목\ 스트레칭.gif');
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  
+  .slide:nth-child(3):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  .slide:nth-child(6) {
+	background: url('../images/02.귀\ 스트레칭.gif');
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(6):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  .slide:nth-child(9) {
+	background: url("../images/03.날개뼈 스트레칭.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(9):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  .slide:nth-child(12) {
+	background: url("../images/04.몸통 스트레칭(팔펴고).gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(12):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  .slide:nth-child(15) {
+	background: url("../images/05.윗등 스트레칭(팔접고).gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(15):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+
+  .slide:nth-child(18) {
+	background: url("../images/06.허리 마사지.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(18):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  
+   .slide:nth-child(21) {
+	background: url("../images/07.엉덩이 마사지.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(21):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  
+   .slide:nth-child(24) {
+	background: url("../images/08.겨드랑이 림프선 마사지.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(24):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  
+   .slide:nth-child(27) {
+	background: url("../images/09.허벅지 앞쪽 마사지.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(27):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  
+   .slide:nth-child(30) {
+	background: url("../images/10.허벅지 안쪽 마사지.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(30):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  
+  .slide:nth-child(33) {
+	background: url("../images/11.허벅지 바깥쪽 마사지.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(33):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  .slide:nth-child(36) {
+	background: url("../images/12.허벅지 뒤쪽 마사지.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(36):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  .slide:nth-child(39) {
+	background: url("../images/13.종아리 마사지.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(39):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  .slide:nth-child(42) {
+	background: url("../images/14.종아리 앞쪽 마사지.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(42):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  .slide:nth-child(45) {
+	background: url("../images/15.아킬레스건 마사지.gif");
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-position: right;
+  }
+  .slide:nth-child(45):after {
+	position: absolute;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100px;
+  }
+  
+  
+  
+  
+  label {
+	box-sizing: border-box;
+	color: #AAA;
+	font-weight: bold;
+	display: block;
+	width: calc((50% / 5) - 2%);
+	margin: 5px 1%;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: solid 4px #AAA;
+	text-align: center;
+	position: absolute;
+	bottom: 5px;
+	text-transform: uppercase;
+  }
+  label:hover {
+	cursor: pointer;
+	color: #FFF;
+	border-bottom: solid 4px #FFF;
+  }
+  label:nth-child(1) {
+	left: calc(50% + (0 * (50% / 5)));
+	border-bottom-color: #2E112D;
+  }
+  label:nth-child(4) {
+	left: calc(50% + (1 * (50%/ 5)));
+	border-bottom-color: #540032;
+  }
+  label:nth-child(7) {
+	left: calc(50% + (2 * (50% / 5)));
+	border-bottom-color: #820333;
+  }
+  label:nth-child(10) {
+	left: calc(50% + (3 * (50% / 5)));
+	border-bottom-color: #C9283E;
+  }
+  label:nth-child(13) {
+	left: calc(50% + (4 * (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+  label:nth-child(16) {
+	left: calc(50% + (5 * (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+  label:nth-child(19) {
+	left: calc(50% + (6 * (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+  label:nth-child(22) {
+	left: calc(50% + (7 * (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+  label:nth-child(25) {
+	left: calc(50% + (8 * (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+  label:nth-child(28) {
+	left: calc(50% + (9 * (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+  
+  label:nth-child(31) {
+	left: calc(50% + (10* (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+  label:nth-child(34) {
+	left: calc(50% + (11* (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+  label:nth-child(37) {
+	left: calc(50% + (12* (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+  label:nth-child(40) {
+	left: calc(50% + (13* (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+  label:nth-child(43) {
+	left: calc(50% + (14* (50% / 5)));
+	border-bottom-color: #F0433A;
+  }
+
+  
+  @keyframes fade-in {
+	0% {
+	  opacity: 0;
+	}
+	50% {
+	  transform: translateY(-50px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateY(0px);
+	  opacity: 1;
+	}
+  }
+  .psst {
+	display: inline-block;
+	background-color: rgba(0, 150, 255, 0.1);
+	border: solid 1px rgba(0, 150, 255, 0.5);
+	color: rgba(0, 150, 255, 0.5);
+	padding: 15px 20px;
+	border-radius: 4px;
+  }
+  .psst a {
+	color: #0096ff;
+  }
+
+
