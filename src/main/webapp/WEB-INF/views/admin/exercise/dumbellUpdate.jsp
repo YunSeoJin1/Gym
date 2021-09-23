@@ -30,7 +30,7 @@
                                 </tr>
                                 <tr>
                                     <th>운동 설명</th>
-                                    <td><textarea name="dex_desciription" id="dex_description" rows="8" cols="70">${dumbellVO.dex_description}</textarea></td>
+                                    <td><textarea name="dex_description" id="dex_description" rows="8" cols="70">${dumbellVO.dex_description}</textarea></td>
                                 </tr>
                                 <tr>
                                     <th>운동 이미지</th>

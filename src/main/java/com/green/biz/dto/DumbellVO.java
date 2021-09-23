@@ -7,7 +7,6 @@ public class DumbellVO {
 	private String dex_description;
 	private String dex_img;
 	private boolean dex_ckbox;
-	
 	public int getDeseq() {
 		return deseq;
 	}
@@ -49,5 +48,6 @@ public class DumbellVO {
 		return "DumbellVO [deseq=" + deseq + ", dex_name=" + dex_name + ", dex_part=" + dex_part + ", dex_description="
 				+ dex_description + ", dex_img=" + dex_img + ", dex_ckbox=" + dex_ckbox + "]";
 	}
+	
 	
 }

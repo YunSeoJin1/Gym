@@ -1,21 +1,21 @@
 package com.green.biz.util;
 
-// 현재 페이지와 관련한 정보를 저장하는 클래스(현재 페이지 번호, 페이지당 출력 항목 수, 각 페이지에서 시작하는 항목)
 public class Criteria {
-	
+	// 특정 페이지 조회를 위한 클래스
 	private int pageNum; // 현재 페이지 번호
-	private int rowsPerPage; // 페이지당 출력행의 수
+	private int rowsPerPage; // 페이지당 보여줄 게시글의 개수
 	
-	// 생성자
 	public Criteria() {
-		this(1, 10); // 기본값: 1페이지, 항목수:10개, 
+		// 기본 생성자 : 최초 게시판에 진입시 필요한 기본값
+		this(1, 6);
 	}
-	
+
 	public Criteria(int pageNum, int rowsPerPage) {
 		this.pageNum = pageNum;
 		this.rowsPerPage = rowsPerPage;
 	}
 
+	// 현재 페이지 번호 page : getter, setter
 	public int getPageNum() {
 		return pageNum;
 	}
@@ -23,26 +23,29 @@ public class Criteria {
 	public void setPageNum(int pageNum) {
 		if(pageNum <= 0) {
 			this.pageNum = 1;
+
 		} else {
 			this.pageNum = pageNum;
-		}
+		}    
 	}
 
+
+	// 페이지당 보여줄 게시글의 개수 perPageNum : getter, setter
 	public int getRowsPerPage() {
 		return rowsPerPage;
 	}
 
 	public void setRowsPerPage(int rowsPerPage) {
-		if(rowsPerPage <= 0 || rowsPerPage > 10) {
-			this.rowsPerPage = 10;
+		if(rowsPerPage <= 0 || rowsPerPage > 6) {
+			this.rowsPerPage = 6;    
 		} else {
 			this.rowsPerPage = rowsPerPage;
 		}
-		this.rowsPerPage = rowsPerPage;
 	}
 
-	// 각 페이지에서 시작하는 항목 번호를 반환
 	public int getPageStart() {
+		// 특정 페이지의 범위를 정하는 구간, 현재 페이지의 게시글 시작 번호
+		// 0 ~ 10 , 10 ~ 20 이런식으로
 		return (pageNum-1) * rowsPerPage + 1;
 	}
 
@@ -50,15 +53,4 @@ public class Criteria {
 	public String toString() {
 		return "Criteria [pageNum=" + pageNum + ", rowsPerPage=" + rowsPerPage + "]";
 	}
-	
 }
-
-
-
-
-
-
-
-
-
-
