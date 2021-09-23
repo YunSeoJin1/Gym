@@ -117,7 +117,7 @@ public class AdminController {
 			MultipartFile uploadFile,
 			DumbellVO dVo, HttpSession session) {
 	
-		String fileName= "";
+		String fileName= " ";
 		if(!uploadFile.isEmpty()) {
 			fileName = uploadFile.getOriginalFilename();
 			dVo.setDex_img(fileName);
