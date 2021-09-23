@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.green.biz.dao.DumbellDAO;
 import com.green.biz.dto.DumbellVO;
+import com.green.biz.util.Criteria;
 
 @Service("dumbellService")
 public class DumbellServiceimpl implements DumbellService {
@@ -42,6 +43,18 @@ public class DumbellServiceimpl implements DumbellService {
 	@Override
 	public void deleteDumbell(int deseq) {
 		dDao.deleteDumbell(deseq);
+	}
+
+	@Override
+	public List<DumbellVO> getListWithPaging(Criteria criteria, String key) {
+
+		return dDao.getListWithPaging(criteria, key);
+	}
+
+	@Override
+	public int countExerciseList(String name) {
+		// TODO Auto-generated method stub
+		return dDao.countExerciseList(name);
 	}
 	
 }

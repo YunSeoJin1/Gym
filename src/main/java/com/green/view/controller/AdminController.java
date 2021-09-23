@@ -19,6 +19,8 @@ import com.green.biz.admin.AdminService;
 import com.green.biz.dto.AdminVO;
 import com.green.biz.dto.DumbellVO;
 import com.green.biz.exercise.DumbellService;
+import com.green.biz.util.Criteria;
+import com.green.biz.util.PageMaker;
 
 
 
@@ -83,11 +85,21 @@ public class AdminController {
 	
 	// 운동 목록 조회
 	@RequestMapping(value = "admin_dumbell_list")
-	public String dumbellList(HttpSession session, Model model, DumbellVO vo) {
+	public String dumbellList(
+			@RequestParam(value="key", defaultValue="") String key,
+			HttpSession session, Model model, DumbellVO vo, Criteria cri) {
 			
-			List<DumbellVO> dumbellList = ds.listDumbell(vo.getDex_name());
+			List<DumbellVO> dumbellList = ds.getListWithPaging(cri, key);
+			
+			PageMaker pageMaker = new PageMaker();
+			pageMaker.setCri(cri);
+			
+			int totalCount = ds.countExerciseList(key);
+			pageMaker.setTotalCount(totalCount);
+			
 			
 			model.addAttribute("dumbellList", dumbellList);
+			model.addAttribute("pageMaker",pageMaker);
 			
 			return "admin/exercise/dumbellList";
 	}
@@ -101,13 +113,14 @@ public class AdminController {
 	// 운동 등록 기능
 	@RequestMapping(value="admin_dumbell_write")
 	public String adminExWrite(
-			@RequestParam(value="dumbell_image",required = false) MultipartFile uploadFile,
-			DumbellVO vo, HttpSession session) {
+			@RequestParam(value="dumbell_image",required = false) 
+			MultipartFile uploadFile,
+			DumbellVO dVo, HttpSession session) {
 	
 		String fileName= "";
 		if(!uploadFile.isEmpty()) {
 			fileName = uploadFile.getOriginalFilename();
-			vo.setDex_img(fileName);
+			dVo.setDex_img(fileName);
 			
 		String image_path
 		= session.getServletContext().getRealPath("WEB-INF/resources/images");
@@ -120,7 +133,7 @@ public class AdminController {
 			e.printStackTrace();
 		}
 	}
-		ds.insertDumbell(vo);
+		ds.insertDumbell(dVo);
 		return "redirect:admin_dumbell_list";
 }
 	
@@ -137,7 +150,7 @@ public class AdminController {
 	// 운동 수정 기능
 	@RequestMapping(value="admin_dumbell_update")
 	public String adminDumbellUpdate(
-			@RequestParam(value="dumbell_image",required = false) MultipartFile uploadFile,
+			@RequestParam(value="dex_img",required = false) MultipartFile uploadFile,
 			DumbellVO vo, HttpSession session) {
 	
 		String fileName= "";

@@ -25,7 +25,7 @@
               		<!-- 임시 링크로 테스트 -->
 
             </table>
-            <c:forEach items="${dumbellList}" var="dumbellVO">
+            
             <table class="board-List">
                 <tr>
                     <th>번호</th>
@@ -34,6 +34,7 @@
                     <th>부위</th>
                     <th>설명</th>
                 </tr>
+                <c:forEach items="${dumbellList}" var="dumbellVO">
                 <tr>
                     <td>${dumbellVO.deseq}</td>
                     <td>
@@ -44,11 +45,14 @@
                     <td>${dumbellVO.dex_part}</td>
                     <td>${dumbellVO.dex_description}</td>
                 </tr>
+                </c:forEach>
             </table>
-            </c:forEach>
+            
             
             </div>
+           
         </div>
+         
     </section>
-<%@ include file="../../page_area.jsp"%>
+<%@ include file="../page_area.jsp"%>
 <%@include file="../adminFooter.jsp"%>

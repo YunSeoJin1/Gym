@@ -1,5 +1,6 @@
 package com.green.biz.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.green.biz.dto.DumbellVO;
+import com.green.biz.util.Criteria;
 
 @Repository
 public class DumbellDAO{
@@ -45,5 +47,16 @@ public class DumbellDAO{
 		mybatis.delete("DumbellDAO.deleteDumbell", deseq);
 	}
 	
+	public List<DumbellVO> getListWithPaging(Criteria criteria, String key) {
+		HashMap<String, Object> map = new HashMap<>();
+		map.put("criteria", criteria);
+		map.put("key", key);
+		
+		return mybatis.selectList("DumbellDAO.listWithPaging", map);
+	}
 	
+	public int countExerciseList(String name) {
+		
+		return mybatis.selectOne("DumbellDAO.countExerciseList", name);
+	}
 }

@@ -35,7 +35,7 @@
                                 <tr>
                                     <th>운동 이미지</th>
                                     <td>
-                                        <input type="file" name="dex_img" id="dex_img"  accept="image/*" onchange="setThumbnail(event);">
+                                        <input type="file" name="dumbell_image" id="dumbell_image"  accept="image/*" onchange="setThumbnail(event);">
                                         <div id="image_container"></div>
                                     </td>
                                 </tr>
