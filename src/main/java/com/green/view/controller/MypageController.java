@@ -29,19 +29,19 @@ public class MypageController {
 	@Autowired
 	private MypageService mypageService;
 	
-	//회원 정보 수정 페이지 이동
+	//�쉶�썝 �젙蹂� �닔�젙 �럹�씠吏� �씠�룞
 	@RequestMapping(value="info_form")
 	public String infoView(MemberVO mVo, HttpSession session, Model model) {
 		
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		
-		System.out.println("회원정보 수정");
+		System.out.println("�쉶�썝�젙蹂� �닔�젙");
 		
 		if (loginUser == null) {
-			System.out.println("로그인 정보 없음");
+			System.out.println("濡쒓렇�씤 �젙蹂� �뾾�쓬");
 			return "mypage/notlogin";
 		} else {
-			System.out.println("회원정보 수정 페이지 이동");
+			System.out.println("�쉶�썝�젙蹂� �닔�젙 �럹�씠吏� �씠�룞");
 			MemberVO member = memberService.getMember(loginUser.getId());
 			model.addAttribute("memberVO",member);
 			return "mypage/myInfo";
@@ -49,34 +49,34 @@ public class MypageController {
 	}
 	
 	
-	//회원정보 수정
+	//�쉶�썝�젙蹂� �닔�젙
 	@RequestMapping(value="info", method=RequestMethod.POST)
 	public String infoAction(@RequestParam(value="profile") MultipartFile uploadFile,
 			MemberVO mVo, HttpSession session) {
 	
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		
-		System.out.println("회원정보 수정");
+		System.out.println("�쉶�썝�젙蹂� �닔�젙");
 	
 
 		if (loginUser == null) {
-			System.out.println("로그인 정보 없음");
+			System.out.println("濡쒓렇�씤 �젙蹂� �뾾�쓬");
 			return "mypage/notlogin";
 		} else {
 		String fileName = "";
 		
-			if (!uploadFile.isEmpty()) {	// 화면에서 product_image 필드에 이미지가 입력된 경우
+			if (!uploadFile.isEmpty()) {	// �솕硫댁뿉�꽌 product_image �븘�뱶�뿉 �씠誘몄�媛� �엯�젰�맂 寃쎌슦
 				fileName = uploadFile.getOriginalFilename();
-				mVo.setProfile_img(fileName); // VO 객체에 이미지파일명 저장
+				mVo.setProfile_img(fileName); // VO 媛앹껜�뿉 �씠誘몄��뙆�씪紐� ���옣
 				
-				// 이미지 파일을 업로드 하기 위해 이미지 저장 실제 경로를 구한다.
+				// �씠誘몄� �뙆�씪�쓣 �뾽濡쒕뱶 �븯湲� �쐞�빐 �씠誘몄� ���옣 �떎�젣 寃쎈줈瑜� 援ы븳�떎.
 				String image_path 
 				= session.getServletContext().getRealPath("WEB-INF/resources/profile_img/");
-				System.out.println("이미지 경로 : " + image_path);
+				System.out.println("�씠誘몄� 寃쎈줈 : " + image_path);
 				
 				try {
 					File file = new File(image_path+fileName);
-					uploadFile.transferTo(file); // 상품이미지 저장 경로로 이동시킴
+					uploadFile.transferTo(file); // �긽�뭹�씠誘몄� ���옣 寃쎈줈濡� �씠�룞�떆�궡
 				} catch (IllegalStateException | IOException e) {
 					e.printStackTrace();
 				}	
@@ -84,7 +84,7 @@ public class MypageController {
 			
 			memberService.memberUpdate(mVo);
 			session.invalidate();
-			System.out.println("회원정보 수정 성공");
+			System.out.println("�쉶�썝�젙蹂� �닔�젙 �꽦怨�");
 			return "redirect:index";
 		}
 	}
@@ -94,11 +94,11 @@ public class MypageController {
 	
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		
-		System.out.println("체중 측정 페이지 이동");
+		System.out.println("泥댁쨷 痢≪젙 �럹�씠吏� �씠�룞");
 	
 
 		if (loginUser == null) {
-			System.out.println("로그인 정보 없음");
+			System.out.println("濡쒓렇�씤 �젙蹂� �뾾�쓬");
 			return "mypage/notlogin";
 		}else {
 			return "mypage/weight_record";
@@ -111,14 +111,14 @@ public class MypageController {
 		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
 		
 		if (loginUser == null) {
-			System.out.println("로그인 정보 없음");
+			System.out.println("濡쒓렇�씤 �젙蹂� �뾾�쓬");
 			return "mypage/notlogin";
 		}else {
 			
 			System.out.println(pVo);
 			
 			mypageService.insertWeight(pVo,mVo);
-			System.out.println("체중 입력 완료!");
+			System.out.println("泥댁쨷 �엯�젰 �셿猷�!");
 			System.out.println(mVo);
 			return "mypage/record";
 		}

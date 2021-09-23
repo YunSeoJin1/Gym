@@ -30,7 +30,11 @@
                                 </tr>
                                 <tr>
                                     <th>운동 설명</th>
+<<<<<<< HEAD
+                                    <td><textarea name="dex_description" id="dex_description" rows="8" cols="70">description</textarea></td>
+=======
                                     <td><textarea name="dex_description" id="dex_description" rows="8" cols="70"></textarea></td>
+>>>>>>> branch 'master' of https://github.com/YunSeoJin1/Gym.git
                                 </tr>
                                 <tr>
                                     <th>운동 이미지</th>
