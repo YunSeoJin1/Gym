@@ -3,6 +3,7 @@ package com.green.biz.exercise;
 import java.util.List;
 
 import com.green.biz.dto.DumbellVO;
+import com.green.biz.util.Criteria;
 
 public interface DumbellService {
 	
@@ -18,4 +19,8 @@ public interface DumbellService {
 	public void updateDumbell(DumbellVO vo);
 	
 	public void deleteDumbell(int deseq);
+	
+	public List<DumbellVO> getListWithPaging(Criteria criteria, String key);
+	
+	public int countExerciseList(String name);
 }

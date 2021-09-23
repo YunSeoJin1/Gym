@@ -37,6 +37,7 @@
                                     <td>
                                         <input type="file" name="dumbell_image" id="dumbell_image"  accept="image/*" onchange="setThumbnail(event);">
                                         <div id="image_container"></div>
+                                         <div id="dumbell_image"><img src="resources/images/${dumbellVO.dex_img}"></div>
                                     </td>
                                 </tr>
                             

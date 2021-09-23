@@ -315,16 +315,20 @@ footer{
     margin: 30px auto;
 }
 .board-List{
-    margin: auto;
-    border: 1px solid #c25a3a;
+    margin: 30px auto;
+    
+    border-bottom: 1px solid #c25a3a;
+   
 }
 .board-List th{
+	
    width: 19%;
     padding: 0;
     background-color: #ccc;
 }
 
 .board-List td{
+	border-top : 1px solid #c25a3a;
     text-align: center;
 }
 .board-List td img{

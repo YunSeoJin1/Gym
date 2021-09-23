@@ -2,6 +2,7 @@ package com.green.view.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -11,10 +12,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.green.biz.dto.MemberVO;
 import com.green.biz.dto.MypageVO;
+import com.green.biz.dto.WeightRecordView;
 import com.green.biz.member.MemberService;
 import com.green.biz.mypage.MypageService;
 
@@ -123,7 +126,29 @@ public class MypageController {
 		
 		
 	}
-	
+	@RequestMapping(value="record_graph")
+	public String recordView(MemberVO mVo, HttpSession session,MypageVO pVo) {
+		MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+		
+		if (loginUser == null) {
+			System.out.println("로그인 정보 없음");
+			return "mypage/notlogin";
+		}else {
+			return "mypage/record";
+		}
+	}
+	@RequestMapping(value="getWeightRecord", produces="application/json; charset=UTF-8")
+	@ResponseBody
+	public List<WeightRecordView> getWeightRecord() {
+		System.out.println("response WeightRecordChart()...");
+		List<WeightRecordView> listSales = mypageService.getWeightRecord();
+		
+		for(WeightRecordView item : listSales) {
+			System.out.println(item);
+		}
+		
+		return listSales;
+	}
 	
 }
 

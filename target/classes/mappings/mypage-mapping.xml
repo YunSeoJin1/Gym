@@ -12,12 +12,16 @@
 	where id = #{id}
 </update>
 
+<resultMap type="com.green.biz.dto.WeightRecordView" id="salesMap">
+		<result column="weight" property="weight"/>
+		<result column="indate" property="indate"/>
+</resultMap>
 
-<select id="weightList" parameterType="String">
-	SELECT * FROM userinfo
-	WHERE id = #{id}
-
-</select>
-	
+<select id="getWeightRecord" resultMap="salesMap">
+	Select weight, indate
+		from userinfo
+		where id=#{id}
+		order by indate;
+</select>	
 
 </mapper>
