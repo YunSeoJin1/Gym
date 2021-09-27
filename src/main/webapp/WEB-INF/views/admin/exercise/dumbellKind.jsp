@@ -25,7 +25,7 @@
               		<!-- 임시 링크로 테스트 -->
 
             </table>
-            <c:forEach items="${dumbellKindList}" var="dumbellVO">
+         
             <table class="board-List">
                 <tr>
                     <th>번호</th>
@@ -33,17 +33,42 @@
                     <th>운동 이름</th>
                     <th>부위</th>
                     <th>설명</th>
+                    <th>코스</th>
                 </tr>
+                  <c:forEach items="${dumbellKindList}" var="dumbellVO">
                 <tr>
                     <td>${dumbellVO.deseq}</td>
                     <td><a href="admin_dumbell_view?deseq=${dumbellVO.deseq}">
                     	<img src="images/${dumbellVO.dex_img}"></a></td>
                     <td>${dumbellVO.dex_name}</td>
-                    <td>${dumbellVO.dex_part}</td>
+                    <td>
+                    <c:choose>
+                    	<c:when test="${dumbellVO.dex_part eq '1'}">
+                    		<p>가슴</p>
+                    	</c:when>
+                    	<c:when test="${dumbellVO.dex_part eq '2'}">
+                    		<p>등</p>
+                    	</c:when>
+                    	<c:when test="${dumbellVO.dex_part eq '3'}">
+                    		<p>팔</p>
+                    	</c:when>
+                    	<c:when test="${dumbellVO.dex_part eq '4'}">
+                    		<p>어깨</p>
+                    	</c:when>
+                    	<c:when test="${dumbellVO.dex_part eq '5'}">
+                    		<p>복근</p>
+                    	</c:when>
+                    	<c:when test="${dumbellVO.dex_part eq '6'}">
+                    		<p>하체</p>
+                    	</c:when>
+                    </c:choose>
+                    </td>
+                     <td>${dumbellVO.dex_description}</td>
                     <td><input type="checkbox" value="${dumbellVO.dex_ckbox}"></td>
                 </tr>
+                  </c:forEach>
             </table>
-            </c:forEach>
+                      <%@ include file="../page_area.jsp"%>
             </div>
         </div>
     </section>

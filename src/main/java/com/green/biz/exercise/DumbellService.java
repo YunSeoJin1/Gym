@@ -23,4 +23,6 @@ public interface DumbellService {
 	public List<DumbellVO> getListWithPaging(Criteria criteria, String key);
 	
 	public int countExerciseList(String name);
+	
+	public List<DumbellVO> listDumbell(DumbellVO dex_name);
 }

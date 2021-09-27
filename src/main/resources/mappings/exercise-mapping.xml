@@ -9,12 +9,13 @@
 		deseq=#{de_seq}
 	</select>
 
-	<!-- 덤벨운동 목록 조회 -->
+	<!-- 운동 목록 조회 -->
 	<select id="listDumbell" parameterType="String" resultType="dumbell">
 		SELECT *
 		  FROM dumbell_exercise
 		 WHERE dex_name LIKE '%'||#{dex_name, jdbcType=VARCHAR}||'%'
 		 ORDER BY deseq DESC 
+		
 	</select>
 	
 	<!-- 부위별(카테고리) 목록조회 -->
@@ -67,4 +68,19 @@
 		SELECT COUNT(*) FROM dumbell_exercise
 		 WHERE dex_name LIKE '%'||#{dex_name}||'%'
 	</select>	
+	
+	
+	<resultMap type="com.green.biz.dto.WeightRecordView" id="recordMap">
+		<result column="weight" property="weight"/>
+		<result column="indate" property="indate"/>
+	</resultMap>
+	
+	
+	<select id="getWeightRecord" resultMap="recordMap">
+		SELECT weight, indate as sales_count 
+ 		  FROM userinfo
+ 		 WHERE id = #{id}
+ 		 GROUP BY indate
+	</select>
+	
 </mapper>

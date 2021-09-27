@@ -31,7 +31,7 @@ $(document).ready(function() {
 		var data = new google.visualization.DataTable();
 		
 		data.addColumn("number", "weight");
-		data.addColumn("Date", "indate");
+		data.addColumn("date", "indate");
 		
 		// 콘트롤러에서 json타입으로 전달된 데이터를 
 		// 자바스크립트의 배열로 저장
@@ -42,17 +42,6 @@ $(document).ready(function() {
 		
 		// data객체에 dataArray의 내용을 저장
 		data.addRows(dataArray);
-		
-		// 파이차트 그리기
-		var piechart_options = {
-			title: '날자별 몸무게',
-			width: 300,
-			height: 300
-		};
-		
-		var piechart = new google.visualization.PieChart(document.getElementById('piechart_div'));
-		
-		piechart.draw(data, piechart_options);
 		
 		// 바차트 그리기
 		var barchart_options = {
@@ -74,7 +63,6 @@ $(document).ready(function() {
 	<h1>체중 증가량 측정</h1>
 	<table>
 		<tr>
-			<td><div id="piechart_div" style="border:1px solid #ccc"></div></td>
 			<td><div id="barchart_div" style="border:1px solid #ccc"></div></td>
 		</tr>
 	</table>

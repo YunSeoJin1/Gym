@@ -7,7 +7,7 @@ public class Criteria {
 	
 	public Criteria() {
 		// 기본 생성자 : 최초 게시판에 진입시 필요한 기본값
-		this(1, 6);
+		this(1, 5);
 	}
 
 	public Criteria(int pageNum, int rowsPerPage) {
@@ -36,8 +36,8 @@ public class Criteria {
 	}
 
 	public void setRowsPerPage(int rowsPerPage) {
-		if(rowsPerPage <= 0 || rowsPerPage > 6) {
-			this.rowsPerPage = 6;    
+		if(rowsPerPage <= 0 || rowsPerPage > 5) {
+			this.rowsPerPage = 5;    
 		} else {
 			this.rowsPerPage = rowsPerPage;
 		}

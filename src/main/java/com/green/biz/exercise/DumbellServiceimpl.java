@@ -56,5 +56,10 @@ public class DumbellServiceimpl implements DumbellService {
 		// TODO Auto-generated method stub
 		return dDao.countExerciseList(name);
 	}
+
+	@Override
+	public List<DumbellVO> listDumbell(DumbellVO dex_name) {
+		return dDao.listDumbell(dex_name);
+	}
 	
 }

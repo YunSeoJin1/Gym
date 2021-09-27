@@ -9,10 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.green.biz.dto.DumbellVO;
 import com.green.biz.exercise.DumbellService;
 import com.green.biz.util.Criteria;
+import com.green.biz.util.PageMaker;
 
 @Controller
 public class ExerciseController {
@@ -41,11 +43,20 @@ public class ExerciseController {
 	
 	// 운동 목록 조회
 	@RequestMapping(value = "dumbell_list")
-	public String dumbellList(HttpSession session, Model model, DumbellVO vo,Criteria cri) {
+	public String dumbellList(
+			@RequestParam(value="key", defaultValue="") String key,
+			HttpSession session, Model model, DumbellVO vo, Criteria cri) {
 			
-			List<DumbellVO> dumbellList = es.listDumbell(vo.getDex_name());
+		
+			List<DumbellVO> dumbellList = es.getListWithPaging(cri, key);
+			PageMaker pageMaker = new PageMaker();
+			pageMaker.setCri(cri);
+			
+			int totalCount = es.countExerciseList(key);
+			pageMaker.setTotalCount(totalCount);
 			
 			model.addAttribute("dumbellList", dumbellList);
+			model.addAttribute("pageMaker",pageMaker);
 			
 			return "exercise/dumbellList";
 	}

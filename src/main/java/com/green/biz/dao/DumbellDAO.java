@@ -47,6 +47,7 @@ public class DumbellDAO{
 		mybatis.delete("DumbellDAO.deleteDumbell", deseq);
 	}
 	
+	//페이징
 	public List<DumbellVO> getListWithPaging(Criteria criteria, String key) {
 		HashMap<String, Object> map = new HashMap<>();
 		map.put("criteria", criteria);
@@ -58,5 +59,13 @@ public class DumbellDAO{
 	public int countExerciseList(String name) {
 		
 		return mybatis.selectOne("DumbellDAO.countExerciseList", name);
+	}
+	
+	//검색 기능
+	
+	public List<DumbellVO> listDumbell(DumbellVO dex_name){
+		
+		return mybatis.selectList("DumbellDAO.listDumbell",dex_name);
+		
 	}
 }

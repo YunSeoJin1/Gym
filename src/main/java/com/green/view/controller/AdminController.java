@@ -88,7 +88,8 @@ public class AdminController {
 	public String dumbellList(
 			@RequestParam(value="key", defaultValue="") String key,
 			HttpSession session, Model model, DumbellVO vo, Criteria cri) {
-			
+		
+		
 			List<DumbellVO> dumbellList = ds.getListWithPaging(cri, key);
 			
 			PageMaker pageMaker = new PageMaker();
@@ -109,6 +110,8 @@ public class AdminController {
 	public String adminExWriteView(HttpSession session) {
 		return "admin/exercise/dumbellWrite";
 	}
+	
+	
 	
 	// 운동 등록 기능
 	@RequestMapping(value="admin_dumbell_write")
